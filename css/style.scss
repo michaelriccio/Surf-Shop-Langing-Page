@@ -1,0 +1,19 @@
+// custom properties
+
+html{
+--blue1: #00e6fd;
+--blue2: #20c2ff;
+--blue3: #0098e5;
+--white: #ebfaff;
+--black: #004b66;
+}
+
+// global
+
+.container{
+    display:grid;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+}
