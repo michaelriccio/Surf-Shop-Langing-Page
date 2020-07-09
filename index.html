@@ -9,6 +9,7 @@
     <meta name="keywords" content="surf, surfboard, fin, fins, tether, tethers, waveriding, shop, wax">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
 </head>
 <body>
     <div class="container">
@@ -16,11 +17,11 @@
             <img class="logo" src="pics/Barrl.png" alt="">
             <div class="location">
                 <ul class="location-list">
-                    <li class="top-list li s">SEARCH</li>
-                    <li class="top-list li b">BOARDS</li>
-                    <li class="top-list li m">MEDIA</li>
-                    <li class="top-list li g">GOALS</li>
-                    <li class="top-list li c">CUSTOMER</li>
+                    <li class="top-list s">SEARCH</li>
+                    <li class="top-list b">BOARDS</li>
+                    <li class="top-list m">MEDIA</li>
+                    <li class="top-list g">GOALS</li>
+                    <li class="top-list c">CUSTOMER</li>
                 </ul>
             </div>
         </header>
@@ -38,9 +39,9 @@
             </div>
             <div class="board">
                 <div class="board-selector">
-                    <div class = "option1 tab">LOCAL</div>
-                    <div class = "option2 tab">NEW</div>
-                    <div class = "option3 tab">DEALS</div>
+                    <div class = "bg-active tab">LOCAL</div>
+                    <div class = "tab">NEW</div>
+                    <div class = "tab">DEALS</div>
                 </div>
                 <div class="board-screen">
                     <div class="board-local here">
@@ -57,7 +58,7 @@
                         <div class="board-item"><a href="" ><img src="pics/local (7).jpg" alt="Board"></a></div>
                         <div class="board-item"><a href="" ><img src="pics/local (8).jpg" alt="Board"></a></div>
                     </div>
-                    <div class="board-new hid"><a> href="" 
+                    <div class="board-new hid"><a>
                         <div class="board-item"><a href="" ><img src="pics/new.jpg" alt="Board"></a></div>
                         <div class="board-item"><a href="" ><img src="pics/new2.jpg" alt="Board"></a></div>
                         <div class="board-item"><a href="" ><img src="pics/new3.jpg" alt="Board"></a></div>
@@ -71,7 +72,7 @@
                         <div class="board-item"><a href="" ><img src="pics/new11.png" alt="Board"></a></div>
                         <div class="board-item"><a href="" ><img src="pics/new12.png" alt="Board"></a></div>
                     </div>
-                    <div class="board-deals hid"> href="" 
+                    <div class="board-deals hid"> 
                         <div class="board-item"><a href="" ><img src="pics/deal1.jpg" alt="Board"></a></div>
                         <div class="board-item"><a href="" ><img src="pics/deal2.png" alt="Board"></a></div>
                         <div class="board-item"><a href="" ><img src="pics/deal3.png" alt="Board"></a></div>
@@ -87,7 +88,17 @@
                     </div>
                 </div>
             </div>
-            <div class="media"></div>
+            <div class="media">
+                <div class="arrow-wrapper">
+                    <a class="arrow-anchor" href=""><img class="arrow" src="./pics/arrow.png"></a>
+                </div>
+                <div class="media-frame">
+                    <iframe class="frame1" width="560" height="315" src="https://www.youtube.com/embed/W7h-Yho8EB0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="arrow-wrapper">
+                    <a class="arrow-anchor" href=""><img class="arrow face-right" src="./pics/arrow.png"></a>
+                </div>
+            </div>
             <div class="goals">
                 <div class="goals-contain">
                     <h2>What we're about</h2>
@@ -104,7 +115,7 @@
                 <a href="">
                     <div class="customer-option">
                         <h3>Deliveries</h3>
-                        <h5>Have an issue with your delivery? Let us know, we're here to help. Hours are Monday to Friday, 8am to 4pm. Click here for customer service number and email address. </h5>
+                        <h5>Have an issue with your delivery? Let us know, we're here to help. Hours are Monday to Friday, 8am to 4pm. Click here for customer service number and email address. Our representatives are trained by legendary customer service speaker John Madden himself.</h5>
                     </div>
                 </a>
                 <a href="">
@@ -134,6 +145,6 @@
         </footer>
         <a class="help">Help</a>
     </div>
-    <script type="text/javascript" src="js/app.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

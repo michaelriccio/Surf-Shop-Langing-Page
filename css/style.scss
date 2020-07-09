@@ -1,6 +1,6 @@
 //imports
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap');
-
+@import url(media.css);
 // custom properties
 
 html{
@@ -68,10 +68,7 @@ header{
             .top-list{
                 display:flex;
                 justify-content: center;
-                filter: brightness(.85)
-                
-            }
-            .li{
+                filter: brightness(.85);
                 transition:font-size .1s ease-out;
                 &:hover{
                     font-size: 2.2rem;
@@ -86,13 +83,16 @@ header{
     }
 }
 
+.drop-bottom{
+    height: fit-content;
+}
+
 // main
 
 main{
     padding-top: 10vh;
-    // display:grid;
-    // grid-template-areas: "promo-search""board""media""goals""customer";
-    // grid-template-rows: repeat(5, 1fr);
+    display:grid;
+    grid-template-areas: "promo-search""board""media""goals""customer";
     .promo-search{
         grid-area:promo-search;
         background-image: url(../pics/surfing-background.jpg);
@@ -108,11 +108,14 @@ main{
                 font-family:'Raleway', sans-serif;
                 font-size: 2.5rem;
                 font-weight: 700;
-                padding: .5rem 0;
-                margin: .5em 0;
+                padding: .5rem 1.4rem;
+                margin: .5em;
                 text-align: center;
                 width: 60vw;
-                background-color: #08375265;
+                background-color: #1ca1d162;
+                border: solid 3px var(--black);
+                border-radius: 0 1em 0 1em;
+                max-width: max-content;
             }
         }
         .search{
@@ -136,11 +139,12 @@ main{
                 margin-left: 5px;
                 border: solid 3px var(--orange);
                 background-color: var(--blue2);
-                &:active{
+                transition: background-color .2s ease-out;
+                &:hover{
                     background-color: var(--blue1);
                 }
-                &:hover img{
-                    filter: drop-shadow(1px 1px 3px var(--black));
+                &:active{
+                    filter:hue-rotate(205deg);
                 }
                 img{
                     height: 2rem;
@@ -149,9 +153,6 @@ main{
         }
     }
     .board{
-        
-        background:var(--white);
-        // background-size: contain;
         margin: 1em 1em;
         .board-selector{
             margin-top: 5px;
@@ -159,6 +160,7 @@ main{
             display:flex;
             justify-content: space-evenly;
             margin-right: 6px;
+            position:sticky;
             .tab{
                 flex-grow:1;
                 text-align:center;
@@ -166,7 +168,7 @@ main{
                 font-family: "raleway";
                 position:relative;
                 background-color: var(--blue3);
-                transition: background-color .2s ease-out;
+                transition: filter .2s ease-out;
                 &::before{
                     content:'';
                     background-color:black;
@@ -182,9 +184,10 @@ main{
                     transform: scaleX(1);
                 }
                 &:hover{
-                    background-color: var(--blue2);
+                    filter:brightness(1.5);
                 }
             }
+            .bg-active{background-color: rgb(255, 28, 104);}
         }
         .board-screen{
             .board-local{
@@ -198,9 +201,8 @@ main{
             }
             .here{
                 display:grid;
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(auto-fill (100px, 1fr));
                 gap: 0;
-
             }
             .hid{
                 display: none;
@@ -216,19 +218,64 @@ main{
                 height:100%;
                 display:flex;
                 justify-content:center;
+                &:hover img{
+                    transform:scale(1);
+                }
                 img{
                     width:50vw;
                     transition:transform .5s ease-in-out;
                     transform:scale(.9);
-                    &:hover{
-                        transform:scale(1);
-                    }
                 }
             }
         }
     }
     .media{
         grid-area: media;
+        display:flex;
+        justify-content: space-around;
+        position:relative;
+        max-width: 1200px;
+        .arrow-wrapper{
+            display:flex;
+            flex-direction:column;
+            justify-content: center;
+            position:relative;
+            .arrow-anchor{
+                margin: 5px;
+                display:flex;
+                justify-content:center;
+                padding:5px;
+                border: solid 2px rgba(255, 255, 255, 0);
+                &:hover{
+                    border: solid 2px var(--orange); 
+                }
+                .arrow{
+                    width: 3vw;
+                    position:absolute;
+
+                }
+                .face-right{
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        .media-frame{
+            width: 90%;
+            position:relative;
+            padding-top: 46%;
+            justify-self: center;
+            .frame1{
+                position:absolute;
+                top:0;
+                left:0;
+                bottom:0;
+                right:0;
+                width:99.5%;
+                height:100%;
+                border: solid 3px var(--black);
+                border-radius: 2em;
+            }
+        }
     }
     .goals{
         grid-area: goals;
@@ -274,6 +321,7 @@ main{
         grid-area:customer;
         display:grid;
         grid-template-columns: repeat(auto-fill, minmax(300px ,1fr));
+        justify-content: space-between;
         a:hover h3{
             color: var(--orange);
         }
@@ -288,7 +336,7 @@ main{
                 border-bottom: solid 3px var(--black);
                 color: var(--black);
                 letter-spacing: .3em;
-                padding: .5em;
+                padding: .4em;
                 text-align:center;
                 text-decoration: none;
                 text-transform: uppercase;
@@ -299,6 +347,7 @@ main{
                 color: var(--black);
                 line-height: 1.5em;
                 padding: .5em;
+                min-height:190px; 
             }
         }
     }

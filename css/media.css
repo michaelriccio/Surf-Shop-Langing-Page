@@ -1,0 +1,12 @@
+@media screen and (min-width: 650px) {
+  .here{
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .here{
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+/*# sourceMappingURL=media.css.map */

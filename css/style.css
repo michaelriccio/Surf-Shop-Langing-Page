@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap");
+@import url(media.css);
 html {
   --blue1: #00e6fd;
   --blue2: #20c2ff;
@@ -78,14 +79,11 @@ header .location .location-list .top-list {
           justify-content: center;
   -webkit-filter: brightness(0.85);
           filter: brightness(0.85);
-}
-
-header .location .location-list .li {
   -webkit-transition: font-size .1s ease-out;
   transition: font-size .1s ease-out;
 }
 
-header .location .location-list .li:hover {
+header .location .location-list .top-list:hover {
   font-size: 2.2rem;
 }
 
@@ -109,11 +107,22 @@ header .location .location-list .c {
   color: purple;
 }
 
+.drop-bottom {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 main {
   padding-top: 10vh;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "promo-search" "board" "media" "goals" "customer";
 }
 
 main .promo-search {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: promo-search;
   background-image: url(../pics/surfing-background.jpg);
   background-position: 50% 30%;
@@ -132,11 +141,16 @@ main .promo-search .heading-wrapper .heading {
   font-family: 'Raleway', sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
-  padding: .5rem 0;
-  margin: .5em 0;
+  padding: .5rem 1.4rem;
+  margin: .5em;
   text-align: center;
   width: 60vw;
-  background-color: #08375265;
+  background-color: #1ca1d162;
+  border: solid 3px var(--black);
+  border-radius: 0 1em 0 1em;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
 }
 
 main .promo-search .search {
@@ -167,15 +181,17 @@ main .promo-search .search button {
   margin-left: 5px;
   border: solid 3px var(--orange);
   background-color: var(--blue2);
+  -webkit-transition: background-color .2s ease-out;
+  transition: background-color .2s ease-out;
 }
 
-main .promo-search .search button:active {
+main .promo-search .search button:hover {
   background-color: var(--blue1);
 }
 
-main .promo-search .search button:hover img {
-  -webkit-filter: drop-shadow(1px 1px 3px var(--black));
-          filter: drop-shadow(1px 1px 3px var(--black));
+main .promo-search .search button:active {
+  -webkit-filter: hue-rotate(205deg);
+          filter: hue-rotate(205deg);
 }
 
 main .promo-search .search button img {
@@ -183,7 +199,6 @@ main .promo-search .search button img {
 }
 
 main .board {
-  background: var(--white);
   margin: 1em 1em;
 }
 
@@ -197,6 +212,8 @@ main .board .board-selector {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   margin-right: 6px;
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 main .board .board-selector .tab {
@@ -208,8 +225,10 @@ main .board .board-selector .tab {
   font-family: "raleway";
   position: relative;
   background-color: var(--blue3);
-  -webkit-transition: background-color .2s ease-out;
-  transition: background-color .2s ease-out;
+  -webkit-transition: -webkit-filter .2s ease-out;
+  transition: -webkit-filter .2s ease-out;
+  transition: filter .2s ease-out;
+  transition: filter .2s ease-out, -webkit-filter .2s ease-out;
 }
 
 main .board .board-selector .tab::before {
@@ -234,14 +253,19 @@ main .board .board-selector .tab:hover::before {
 }
 
 main .board .board-selector .tab:hover {
-  background-color: var(--blue2);
+  -webkit-filter: brightness(1.5);
+          filter: brightness(1.5);
+}
+
+main .board .board-selector .bg-active {
+  background-color: #ff1c68;
 }
 
 main .board .board-screen .here {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: (100px, 1fr)[auto-fill];
+      grid-template-columns: repeat(auto-fill 100px, 1fr);
   gap: 0;
 }
 
@@ -267,6 +291,11 @@ main .board .board-item a {
           justify-content: center;
 }
 
+main .board .board-item a:hover img {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
 main .board .board-item a img {
   width: 50vw;
   -webkit-transition: -webkit-transform .5s ease-in-out;
@@ -277,16 +306,82 @@ main .board .board-item a img {
           transform: scale(0.9);
 }
 
-main .board .board-item a img:hover {
-  -webkit-transform: scale(1);
-          transform: scale(1);
+main .media {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: media;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: relative;
+  max-width: 1200px;
 }
 
-main .media {
-  grid-area: media;
+main .media .arrow-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+main .media .arrow-wrapper .arrow-anchor {
+  margin: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5px;
+  border: solid 2px rgba(255, 255, 255, 0);
+}
+
+main .media .arrow-wrapper .arrow-anchor:hover {
+  border: solid 2px var(--orange);
+}
+
+main .media .arrow-wrapper .arrow-anchor .arrow {
+  width: 3vw;
+  position: absolute;
+}
+
+main .media .arrow-wrapper .arrow-anchor .face-right {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+main .media .media-frame {
+  width: 90%;
+  position: relative;
+  padding-top: 46%;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+main .media .media-frame .frame1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 99.5%;
+  height: 100%;
+  border: solid 3px var(--black);
+  border-radius: 2em;
 }
 
 main .goals {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
   grid-area: goals;
   background-image: url(../pics/surfshop.jpg);
   background-size: cover;
@@ -340,11 +435,16 @@ main .goals .goals-contain div::before {
 }
 
 main .customer {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
   grid-area: customer;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 main .customer a:hover h3 {
@@ -364,7 +464,7 @@ main .customer .customer-option h3 {
   border-bottom: solid 3px var(--black);
   color: var(--black);
   letter-spacing: .3em;
-  padding: .5em;
+  padding: .4em;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -377,6 +477,7 @@ main .customer .customer-option h5 {
   color: var(--black);
   line-height: 1.5em;
   padding: .5em;
+  min-height: 190px;
 }
 
 footer {
