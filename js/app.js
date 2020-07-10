@@ -69,28 +69,21 @@ topList.forEach(selecting);
 
 // 3. Sticky header for board selection.
 
+
+
+
+
+// 4. Highlight current board tab, change cards showing.
+
 const here = document.querySelector('.here');
 const hid = document.querySelector('.hid');
 const boardLocal = document.querySelector('.board-local');
 const boardNew = document.querySelector('.board-new');
 const boardDeals = document.querySelector('.board-deals');
-
-
-
-
-// 4. Highlight current board tab.
-
 const tab = document.querySelectorAll('.tab');
 
-// Get rid of all pink backgrounds, then add it to the clicked one.
-for(let i=0; i < tab.length; i++) {
-    tab[i].addEventListener('click', active) 
-}
 
-function active(ev){
-    tab.className.remove('bg-active');
-    ev.target.classList.add('bg-active');
-}
+
 
 
 
