@@ -6,7 +6,7 @@ const log = console.log;
 // 3. Sidebar nav.
 // 4. Highlight current board tab.
 
-
+// VARIABLES
 const locationList = document.querySelector('.location-list');
 const topList = document.querySelectorAll('li.top-list');
 let search = document.querySelector('.search');
