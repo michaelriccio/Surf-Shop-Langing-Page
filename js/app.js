@@ -28,8 +28,6 @@ let mainList = document.querySelector('main').children;
 let mainArray = Array.from(mainList);
 let colors = ['s','b','m','g','c'];
 mainArray.forEach((item,index) => {
-    log(colors[index%5]);
-    console.log(item.classList[0])
     let li = `<li class="nav">${item.classList[0]}</li>`
     let li2 = `<li class="top-list ${colors[index%5]}">${item.classList[0].toUpperCase()}</li>`;
     locationList.innerHTML += li2;
