@@ -141,4 +141,6 @@ boardSelector.addEventListener('click', function(ev){
 })
 
 
+//   Alert Reminder
+let alertReminder = () => alert('This is a demo of a surfshop landing page. Pages outside the landing page aren\'t available.');
 

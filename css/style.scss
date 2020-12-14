@@ -119,6 +119,7 @@ header{
         position:fixed;
         top: var(--h-size);
         transition: transform .5s cubic-bezier(.63,.43,.4,1.25);
+        width: 500px;
         filter: drop-shadow(0 4px 4px black);
         .nav{
             color: var(--orange);
@@ -263,11 +264,12 @@ main{
         .board-item{
             background-color: white;
             overflow:hidden;
-            a{
+            div{
                 display:flex;
                 height:100%;
                 justify-content:center;
                 width:100%;
+                cursor: pointer;
                 &:hover img{
                     transform:scale(1);
                 }

@@ -171,6 +171,7 @@ header .sidebar {
   transition: -webkit-transform 0.5s cubic-bezier(0.63, 0.43, 0.4, 1.25);
   transition: transform 0.5s cubic-bezier(0.63, 0.43, 0.4, 1.25);
   transition: transform 0.5s cubic-bezier(0.63, 0.43, 0.4, 1.25), -webkit-transform 0.5s cubic-bezier(0.63, 0.43, 0.4, 1.25);
+  width: 500px;
   -webkit-filter: drop-shadow(0 4px 4px black);
           filter: drop-shadow(0 4px 4px black);
 }
@@ -368,7 +369,7 @@ main .board .board-item {
   overflow: hidden;
 }
 
-main .board .board-item a {
+main .board .board-item div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -377,14 +378,15 @@ main .board .board-item a {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
+  cursor: pointer;
 }
 
-main .board .board-item a:hover img {
+main .board .board-item div:hover img {
   -webkit-transform: scale(1);
           transform: scale(1);
 }
 
-main .board .board-item a img {
+main .board .board-item div img {
   width: 50vw;
   -webkit-transition: -webkit-transform .5s ease-in-out;
   transition: -webkit-transform .5s ease-in-out;
