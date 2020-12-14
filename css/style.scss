@@ -274,9 +274,10 @@ main{
                     transform:scale(1);
                 }
                 img{
-                    width:50vw;
                     transition:transform .5s ease-in-out;
                     transform:scale(.9);
+                    max-width: 300px;
+                    width: 40vw;
                 }
             }
         }
